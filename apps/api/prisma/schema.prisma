@@ -1,0 +1,42 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model Asset {
+  id          String   @id @default(cuid())
+  title       String
+  creator     String?
+  year        Int?
+  medium      String?
+  dimensions  String?
+  location    String?
+  notes       String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  provenance ProvenanceRecord[]
+}
+
+model ProvenanceRecord {
+  id          String   @id @default(cuid())
+  assetId     String
+  asset       Asset    @relation(fields: [assetId], references: [id], onDelete: Cascade)
+  
+  owner       String?
+  dateFrom    DateTime?
+  dateTo      DateTime?
+  location    String?
+  notes       String?
+  
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([assetId])
+}
