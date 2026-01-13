@@ -1,7 +1,7 @@
 console.log('🤖 Marquee Agents runner starting...');
 
-// Export provenance checking function
-export { provenanceGapCheck } from './provenance.js';
+// Re-export from core
+export { provenanceGapCheck } from '@marquee/core';
 
 // Agent runner will be implemented here
 const main = async () => {

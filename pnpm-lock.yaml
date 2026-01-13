@@ -39,9 +39,6 @@ importers:
 
   apps/api:
     dependencies:
-      '@marquee/agents':
-        specifier: workspace:*
-        version: link:../agents
       '@marquee/core':
         specifier: workspace:*
         version: link:../../packages/core

@@ -2,7 +2,7 @@ import 'dotenv/config';
 import Fastify from 'fastify';
 import prisma from './db.js';
 import type { CreateAssetInput } from '@marquee/core';
-import { provenanceGapCheck } from '@marquee/agents';
+import { provenanceGapCheck } from '@marquee/core';
 
 const fastify = Fastify({
   logger: true,

@@ -10,7 +10,6 @@
     "lint": "eslint src"
   },
   "dependencies": {
-    "@marquee/agents": "workspace:*",
     "@marquee/core": "workspace:*",
     "@prisma/client": "^7.2.0",
     "dotenv": "^17.2.3",
